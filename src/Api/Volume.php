@@ -52,7 +52,7 @@ class Volume extends AbstractApi
      */
     public function getByNameAndRegion(string $driveName, string $regionSlug)
     {
-        $volumes = $this->get(\sprintf('volumes&region=%s&name=%s', $regionSlug, $driveName));
+        $volumes = $this->get(\sprintf('volumes?region=%s&name=%s', $regionSlug, $driveName));
 
         return \array_map(function ($volume) {
             return new VolumeEntity($volume);
