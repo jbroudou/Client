@@ -31,7 +31,7 @@ class Snapshot extends AbstractApi
      */
     public function getAll(array $criteria = [])
     {
-        $query = [];
+        $query = $criteria;
 
         if (isset($criteria['type']) && \in_array($criteria['type'], ['droplet', 'volume'], true)) {
             $query['resource_type'] = $criteria['type'];
